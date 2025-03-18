@@ -1,0 +1,23 @@
+class GraphicDesigner:
+    def designLogo(self, logo_name):
+        return f"Logo '{logo_name}' designed."
+
+class WebDeveloper:
+    def buildWebsite(self, website_name):
+        return f"Website '{website_name}' built."
+
+class DigitalSolutionsProvider(GraphicDesigner, WebDeveloper):
+    def deliverProject(self, logo_name, website_name):
+        logo_message = self.designLogo(logo_name)
+        website_message = self.buildWebsite(website_name)
+        return (f"{logo_message}\n"
+                f"{website_message}\n"
+                "This showcases a complete brand identity and online presence.")
+
+if __name__ == "__main__":
+    provider = DigitalSolutionsProvider()
+    logo_name = "MyBrandLogo"
+    website_name = "www.mybrand.com"
+    
+    project_delivery_message = provider.deliverProject(logo_name, website_name)
+    print(project_delivery_message)
